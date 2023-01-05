@@ -1,0 +1,7 @@
+License.txt
+setup.py
+tktimepicker.egg-info/PKG-INFO
+tktimepicker.egg-info/SOURCES.txt
+tktimepicker.egg-info/dependency_links.txt
+tktimepicker.egg-info/requires.txt
+tktimepicker.egg-info/top_level.txt

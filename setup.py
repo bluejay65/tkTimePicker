@@ -1,33 +1,26 @@
-from setuptools import setup
+import setuptools
 
-try:
-    from pypandoc import convert
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
-    read_md = lambda f: convert(f, 'rst')
-except ImportError:
-    print("warning: pypandoc module not found, could not convert Markdown to RST")
-    with open("Readme.md", 'r') as f:
-        long_description = f.read()
-
-setup(
-    name='tkTimePicker',
-    version='2.0.2',
-    description='This package provides you with easy to customize timepickers',
-    license="MIT",
+setuptools.setup(
+    name="tktimepicker",
+    version=1.0,
+    author="Jack Horvath",
+    author_email="jmhorvath65@gmail.com",
+    description="An altered version of tktimepicker to work with Reddcat.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='Paul',
-    url="https://github.com/PaulleDemon/tkTimePicker",
+    url="https://github.com/bluejay65/tkTimePicker",
+    packages=setuptools.find_packages(where='src'),
+    license='MIT License',
+    install_requires=['tk'],
+    keywords='tkinter tktimepicker',
     classifiers=[
+        "Programming Language :: Python :: 3 :: Only",
+        "Intended Audience :: Developers",
+        "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10"
+        "Operating System :: OS Independent",
     ],
-    keywords=['tkinter', 'timepicker', 'time', 'tktimepicker'],
-    packages=["tktimepicker"],
-    include_package_data=True,
-    python_requires='>=3.6',
 )
